@@ -3,6 +3,8 @@
 import React from 'react'
 import {motion} from "framer-motion"
 import Blod from '@/components/Blod';
+import Image from 'next/image';
+import avatarImg from "@/public/assets/avatar.png";
 
 const Home = () => {
   return (
@@ -18,6 +20,15 @@ const Home = () => {
         <div className="w-full xl:w-[550px]">text</div>
         <div className="hidden xl:block flex-1 relative z-20">
         <Blod containerStyles="w-[560px] h-[560px]" />
+          <Image src ={avatarImg} alt="" width={440} height={600}
+          quality={100} className="absolute -top-16 left-[120px]"
+          />
+
+          <div className="w-full h-[164px]
+          absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary
+          via-primary/90 to-primary/40
+          ">
+          </div>
 
         </div>
       </div>

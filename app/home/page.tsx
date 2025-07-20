@@ -109,11 +109,17 @@ const Home = () => {
 
       </div>
 
+ 
       {/* Socials component positioned absolutely to the right of the screen on larger viewports */}
       <Socials
-        containerStyles=" lg:flex flex-col gap-6 absolute top-1/2 right-0 transform -translate-y-1/2 z-50 p-4 rounded-l-lg" 
+        containerStyles=" flex 2xl:flex-col gap-6  2xl:flex 2xl:absolute
+        2xl:flex 2xl:absolute 2xl:top-1/2 2xl:right-2 2xl:-translate-x-1/2 2xl:-translate-y-1/2
+        " 
         
-        iconStyles="text-2xl text-gray-700 hover:text-blue-500"
+        iconStyles="
+        bg-accent text-white hover:bg-accent-hover transition w-[48px] h-[48px] text-[22px]
+        flex items-center justify-center rounded-full cursor-pointer
+        "
       />
     </motion.section>
   );

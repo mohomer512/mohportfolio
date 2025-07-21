@@ -9,6 +9,7 @@ import avatarImg from "@/public/assets/avatar.png"; // Assuming this path is cor
 import { MdArrowOutward } from 'react-icons/md';
 import { HiOutlineMail, HiOutlinePhone } from 'react-icons/hi';
 import Socials from '@/components/Socials'; // Assuming this path is correct
+import PatternBackground from '@/components/PatternBackground';
 
 const Home = () => {
   return (
@@ -28,12 +29,18 @@ const Home = () => {
       // px-4 sm:px-6 lg:px-8: Responsive horizontal padding
       className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 relative" // Added 'relative' here
     >
+
+      {/*pattern*/}
+
+              <PatternBackground />
+
       {/* Main content wrapper:
           flex-col items-center: Column layout, centered items on small screens
           xl:flex-row xl:justify-between: Row layout, space-between on extra-large screens
           w-full max-w-7xl mx-auto: Full width, max-width, and horizontally centered
       */}
       <div className="flex flex-col items-center xl:flex-row xl:justify-between w-full max-w-7xl mx-auto">
+
 
         {/* Text content area */}
         <div
@@ -67,7 +74,10 @@ const Home = () => {
           </button>
 
           {/* Contact information */}
-          <div className="flex flex-col items-center xl:flex-row xl:items-center gap-4 xl:gap-8">
+          <div className="flex flex-col items-center xl:flex-row xl:items-center gap-4 xl:gap-8 mb-12
+          xl:mb-0
+          
+          ">
             <div className="flex items-center gap-4 text-lg">
               <span className="text-accent">
                 <HiOutlinePhone />

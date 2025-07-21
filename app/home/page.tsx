@@ -107,11 +107,11 @@ const Home = () => {
           <Image
             src={avatarImg}
             alt="Avatar"
-            width={440}
-            height={600}
+            width={390}
+            height={540}
             quality={100}
             // Absolute positioning relative to its parent div (.hidden.xl:block)
-            className="absolute -top-16 left-[120px] mt-28"
+            className="absolute -top-16 left-[120px] "
           />
           {/* Gradient overlay for the image */}
           <div className="w-full h-[164px] absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary via-primary/90 to-primary/40"></div>

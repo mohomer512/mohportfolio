@@ -10,6 +10,7 @@ import { MdArrowOutward } from 'react-icons/md';
 import { HiOutlineMail, HiOutlinePhone } from 'react-icons/hi';
 import Socials from '@/components/Socials'; // Assuming this path is correct
 import PatternBackground from '@/components/PatternBackground';
+import Gradient from '@/components/Gradient';
 
 const Home = () => {
   return (
@@ -32,6 +33,7 @@ const Home = () => {
 
       {/*pattern*/}
 
+              <Gradient />
               <PatternBackground />
 
       {/* Main content wrapper:
@@ -49,7 +51,7 @@ const Home = () => {
           // mb-8: Margin bottom on small screens
           className="w-full xl:w-[550px] flex flex-col items-center text-center xl:items-start xl:text-left mb-8 xl:mb-0"
         >
-          <h1 className="h1 flex-1 mb-[28px]">
+          <h1 className="font-mono h1 flex-1 mb-[28px]">
             Hi!! I`m Mohammed, <br />
             <TypeAnimation
               sequence={["Web Developer", 2000, "IT Support Specialist", 2000]}
@@ -60,7 +62,7 @@ const Home = () => {
               cursor={false}
             />
           </h1>
-          <p className="max-w-[500px] mb-[44px] px-4 sm:px-0"> {/* Adjusted padding for smaller screens */}
+          <p className="font-mono max-w-[500px] mb-[44px] px-4 sm:px-0"> {/* Adjusted padding for smaller screens */}
             Begin your digital journey.<br />
             Experience how your ideas effortlessly<br />
             evolve into seamless online realities.

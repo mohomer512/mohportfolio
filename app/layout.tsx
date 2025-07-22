@@ -4,6 +4,7 @@ import "./globals.css";
 import MainNav from "@/components/MainNav";
 import PageTransition from "@/components/PageTransition";
 import RectangleTransition from "@/components/RectangleTransition";
+import Gradient from "@/components/Gradient";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
 
+      <Gradient/>
         <RectangleTransition />
         
         <PageTransition >

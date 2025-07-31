@@ -5,6 +5,7 @@ import MainNav from "@/components/MainNav";
 import PageTransition from "@/components/PageTransition";
 import RectangleTransition from "@/components/RectangleTransition";
 import Gradient from "@/components/Gradient";
+import Header from "@/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,8 +47,8 @@ export default function RootLayout({
           {/* Main content area */}
           <main className="flex-1 px-4 py-6 max-w-[1130px] mx-auto w-full">
             <header className="mb-6">
-              <h1 className="text-2xl font-bold">Header</h1>
-            </header>
+              <Header />
+              </header>
             <section>{children}</section>
           </main>
         </div>

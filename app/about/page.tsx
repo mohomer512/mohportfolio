@@ -28,7 +28,7 @@ const About = () => (
 
         {/* Right Side - Scrollable Content */}
         <div className="flex-1 min-h-0">
-          <ScrollArea className="h-100 w-full rounded-md border p-4">
+          <ScrollArea className="h-300 w-full rounded-md border p-4">
             <div className="space-y-6">
               <div className='flex items-center gap-3'>
                 <div className='w-2 h-2 bg-accent rounded-full' />
@@ -37,12 +37,24 @@ const About = () => (
               <h2 className='text-3xl font-bold mb-4'>
                 <span className='text-accent'>Mohammed</span> Omer
               </h2>
+                                   <p>
+                Full Stack Developer with over 1 year of experience in designing and developing
+responsive, user-friendly web applications using React.js, Laravel, and Node.js.
+4+ years of background in IT Support, demonstrating strong problem-solving,
+system administration, and technical troubleshooting capabilities. Combines
+a passion for clean, maintainable code and UI/UX best practices with
+a commitment to continuous learning and staying up-to-date with emerging
+technologies
+              </p>
 
               {/* محتوى طويل لتجربة التمرير */}
-              <div className="space-y-3">
-                {[...Array(30)].map((_, i) => (
-                  <p key={i}>This is some sample content line {i + 1} for scrolling...</p>
-                ))}
+
+              <div className="flex flex-col items-start gap-16">
+                  <div>stats</div>
+                  <div>testmonial</div>
+                  <div>info</div>
+                  <div>journey</div>
+                  <div>skills</div>
               </div>
             </div>
           </ScrollArea>

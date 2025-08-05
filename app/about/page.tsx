@@ -17,8 +17,8 @@ const About = () => (
     }}
     className='min-h-screen flex items-center'
   >
-    <div className="container mx-auto px-4">
-      <div className="flex flex-col xl:flex-row items-stretch gap-8 w-full min-h-[680px]">
+    <div className="container mx-auto px-4 mt-16-">
+      <div className="flex flex-col xl:flex-row items-stretch gap-8 w-full min-h-[680px] mt-16">
         
         {/* Left Side - Image or Decoration */}
         <div className="hidden xl:flex flex-col w-full max-w-[430px] relative bg-pink-50/10 pt-14">

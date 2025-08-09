@@ -1,9 +1,67 @@
-import React from 'react'
+import React from 'react';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
-const Testmonial = () => {
+// This is the main App component that will render the testimonial slider.
+export default function App() {
   return (
-    <div>Testmonial</div>
-  )
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center p-4 md:p-8">
+      <div className="w-full max-w-2xl bg-white p-6 rounded-xl shadow-2xl">
+        <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-8">What Our Clients Say</h1>
+        <TestimonialSlider />
+      </div>
+    </div>
+  );
 }
 
-export default Testmonial
+// This component contains the swiper logic and styling for the testimonials.
+const TestimonialSlider = () => {
+  // An array of objects to hold the testimonial data. You can replace this with your own content.
+  const testimonials = [
+    {
+      text: "This product has completely transformed my workflow. The results were immediate and incredibly positive. I highly recommend it to anyone looking to improve their efficiency!",
+      name: "Alex Johnson",
+    },
+    {
+      text: "Working with this team was an amazing experience. They were professional, attentive, and delivered beyond my expectations. I couldn't be happier with the outcome.",
+      name: "Maria Rodriguez",
+    },
+    {
+      text: "I was initially skeptical, but this service proved to be exactly what I needed. It's user-friendly, reliable, and the support team is fantastic. I'm a customer for life!",
+      name: "Jordan Lee",
+    },
+  ];
+
+  // Configuration for the react-slick slider.
+  const sliderSettings = {
+    dots: true, // Show navigation dots
+    infinite: true, // Loop the slider
+    speed: 500, // Transition speed in ms
+    slidesToShow: 1, // Show one slide at a time
+    slidesToScroll: 1, // Scroll one slide at a time
+    autoplay: true, // Auto-advance the slides
+    autoplaySpeed: 5000, // Time between slides in ms
+    arrows: false, // Hide the default navigation arrows
+  };
+
+  return (
+    <Slider {...sliderSettings}>
+      {testimonials.map((testimonial, index) => (
+        // Each testimonial is a single slide in the carousel.
+        <div key={index} className="p-4 md:p-8">
+          <div className="flex flex-col items-start space-y-4">
+            {/* The main testimonial text */}
+            <p className="text-xl md:text-2xl font-light text-gray-700 leading-relaxed italic">
+              {testimonial.text}
+            </p>
+            {/* The author's name, aligned to the right and in a different color */}
+            <p className="w-full text-right text-lg md:text-xl font-bold text-blue-500">
+              - {testimonial.name}
+            </p>
+          </div>
+        </div>
+      ))}
+    </Slider>
+  );
+};

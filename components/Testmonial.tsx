@@ -1,19 +1,9 @@
+"use client";
+
 import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-
-// This is the main App component that will render the testimonial slider.
-export default function App() {
-  return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center p-4 md:p-8">
-      <div className="w-full max-w-2xl bg-white p-6 rounded-xl shadow-2xl">
-        <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-8">What Our Clients Say</h1>
-        <TestimonialSlider />
-      </div>
-    </div>
-  );
-}
 
 // This component contains the swiper logic and styling for the testimonials.
 const TestimonialSlider = () => {
@@ -46,22 +36,27 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <Slider {...sliderSettings}>
-      {testimonials.map((testimonial, index) => (
-        // Each testimonial is a single slide in the carousel.
-        <div key={index} className="p-4 md:p-8">
-          <div className="flex flex-col items-start space-y-4">
-            {/* The main testimonial text */}
-            <p className="text-xl md:text-2xl font-light text-gray-700 leading-relaxed italic">
-              {testimonial.text}
-            </p>
-            {/* The author's name, aligned to the right and in a different color */}
-            <p className="w-full text-right text-lg md:text-xl font-bold text-blue-500">
-              - {testimonial.name}
-            </p>
+    <div className="w-full max-w-lg mx-auto p-4 md:p-6 text-white">
+      <h3 className="text-3xl font-bold text-center text-white mb-6">What My Clients Say</h3>
+      <Slider {...sliderSettings}>
+        {testimonials.map((testimonial, index) => (
+          // Each testimonial is a single slide in the carousel.
+          <div key={index} className="px-4 py-6">
+            <div className="flex flex-col items-center text-center space-y-4">
+              {/* The main testimonial text */}
+              <p className="text-lg font-light text-gray-300 leading-relaxed italic">
+                {testimonial.text}
+              </p>
+              {/* The author's name */}
+              <p className="text-lg font-bold text-blue-500">
+                - {testimonial.name}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
-    </Slider>
+        ))}
+      </Slider>
+    </div>
   );
 };
+
+export default TestimonialSlider;

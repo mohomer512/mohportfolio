@@ -44,7 +44,7 @@ const Skills: React.FC = () => {
       <h3 className="text-2xl font-bold mb-8 text-white">
         My <span className="text-pink-500">Skills</span>
       </h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+      <div className="grid grid-cols-2 gap-6">
         {skillsData.map((skill, index) => (
           <div 
             key={index} 

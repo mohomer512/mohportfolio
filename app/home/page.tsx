@@ -11,6 +11,7 @@ import { Mail, Phone } from 'lucide-react'; // Using lucide-react for consistent
 import Socials from '@/components/Socials'; // Assuming this path is correct
 import PatternBackground from '@/components/PatternBackground';
 import Gradient from '@/components/Gradient';
+import Link from 'next/link';
 
 const Home = () => {
   return (
@@ -54,12 +55,14 @@ const Home = () => {
             evolve into seamless online realities.
           </p>
 
-          <button className="btn btn-lg bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition-colors" >
-            <div className="flex items-center gap-3">
-              <span>Lets talk.</span>
-              <MdArrowOutward />
-            </div>
-          </button>
+             <Link href="/contact">
+                <button className="btn btn-lg bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition-colors">
+                  <div className="flex items-center gap-3">
+                    <span>Lets talk.</span>
+                    <MdArrowOutward />
+                  </div>
+                </button>
+              </Link>
 
           {/* Contact information - Icons fixed to use lucide-react */}
           <div className="flex flex-col items-center xl:flex-row xl:items-center gap-4 xl:gap-8 mt-12">

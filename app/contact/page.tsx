@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
         <div className="p-4">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <input
+            <input
                 type="text"
                 name="name"
                 placeholder="Your Name"

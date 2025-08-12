@@ -10,7 +10,7 @@ interface BlodProps {
 const Blod: React.FC<BlodProps> = ({ containerStyles }) => {
 
   return (
-    <div className={containerStyles}>Blod
+    <div className={containerStyles}>
     <svg viewBox="-10 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <motion.path fill="#5810ff" transform="translate(100 100)"
     initial={{

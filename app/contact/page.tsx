@@ -62,23 +62,23 @@ const Contact: React.FC = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-4 text-white">
               <Mail className="text-pink-500" />
-              <p>mohammed.omer@example.com</p>
+              <p>drprogrammer512@hotmail.com</p>
             </div>
             <div className="flex items-center gap-4 text-white">
               <Phone className="text-pink-500" />
-              <p>+1 (555) 123-4567</p>
+              <p>+201123633179</p>
             </div>
             <div className="flex items-center gap-4 text-white">
               <MapPin className="text-pink-500" />
-              <p>New York, USA</p>
+              <p>Egypt,Cario,Bader City </p>
             </div>
           </div>
 
           <div className="flex items-center gap-6 mt-4">
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/mohammed-omer-759714294/" target="_blank" rel="noopener noreferrer">
               <Linkedin className="text-gray-400 hover:text-pink-500 transition-colors" size={32} />
             </a>
-            <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/mohomer512" target="_blank" rel="noopener noreferrer">
               <Github className="text-gray-400 hover:text-pink-500 transition-colors" size={32} />
             </a>
             {/* Add more social media links here if you wish */}

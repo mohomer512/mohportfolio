@@ -10,15 +10,15 @@ type SocialItem = {
 const socialsData: SocialItem[] = [
   {
     icon: <BiLogoFacebook />,
-    path: "",
+    path: "https://www.facebook.com/mohmed.aradieb/",
   },
   {
     icon: <BiLogoInstagramAlt />,
-    path: "",
+    path: "https://www.instagram.com/mohammed_3radieb",
   },
   {
     icon: <BiLogoLinkedin />,
-    path: "",
+    path: "https://www.linkedin.com/in/mohammed-omer-759714294/",
   },
 ];
 
@@ -31,9 +31,15 @@ const Socials: React.FC<Props> = ({ containerStyles = "", iconStyles = "" }) => 
   return (
     <div className={containerStyles}>
       {socialsData.map((item, index) => (
-        <div key={index} className={iconStyles}>
+        <a
+          key={index}
+          href={item.path}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={iconStyles}
+        >
           {item.icon}
-        </div>
+        </a>
       ))}
     </div>
   );

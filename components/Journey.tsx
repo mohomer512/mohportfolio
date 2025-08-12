@@ -34,7 +34,7 @@ const Journey = () => {
       icon: <GraduationCap className="text-accent w-5 h-5" />,
       title: "Bachelor of  Computer Science",
       company: "University of sudan",
-      date: "2015 - 2019",
+      date: "2013 - 2017",
       description:
         "Completed coursework in data structures, algorithms, and software engineering. Graduated with honors.",
     },

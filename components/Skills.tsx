@@ -15,23 +15,23 @@ const Skills: React.FC = () => {
   const skillsData: SkillItem[] = [
     {
       name: "React",
-      icon: <Atom className="text-pink-500 w-8 h-8" />,
+      icon: <Atom className="text-accent w-8 h-8" />,
     },
     {
       name: "MongoDB",
-      icon: <Database className="text-pink-500 w-8 h-8" />,
+      icon: <Database className="text-accent w-8 h-8" />,
     },
     {
       name: "Supabase",
-      icon: <Cloud className="text-pink-500 w-8 h-8" />,
+      icon: <Cloud className="text-accent w-8 h-8" />,
     },
     {
       name: "JavaScript",
-      icon: <Code className="text-pink-500 w-8 h-8" />,
+      icon: <Code className="text-accent w-8 h-8" />,
     },
     {
       name: "Tailwind CSS",
-      icon: <Palette className="text-pink-500 w-8 h-8" />,
+      icon: <Palette className="text-accent w-8 h-8" />,
     },
   ];
 
@@ -42,7 +42,7 @@ const Skills: React.FC = () => {
       className="p-4 rounded-xl shadow-inner bg-black/10"
     >
       <h3 className="text-2xl font-bold mb-8 text-white">
-        My <span className="text-pink-500">Skills</span>
+        My <span className="text-accent">Skills</span>
       </h3>
       <div className="grid grid-cols-2 gap-6">
         {skillsData.map((skill, index) => (

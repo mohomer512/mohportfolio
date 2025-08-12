@@ -27,8 +27,10 @@ const Home = () => {
       className="h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     >
       {/* Background patterns and gradient */}
+      <div className='fixed inset-0 -z-10'>
       <Gradient />
       <PatternBackground />
+      </div>
 
       {/* Main content wrapper */}
       <div className="relative z-10 flex flex-col items-center xl:flex-row xl:justify-between w-full max-w-7xl mx-auto py-16 xl:py-0">
@@ -52,7 +54,7 @@ const Home = () => {
             evolve into seamless online realities.
           </p>
 
-          <button className="btn btn-lg bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition-colors">
+          <button className="btn btn-lg bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition-colors" >
             <div className="flex items-center gap-3">
               <span>Lets talk.</span>
               <MdArrowOutward />

@@ -16,17 +16,17 @@ const Info: React.FC = () => {
   // The personalInfo array is now of type PersonalInfoItem[].
   const personalInfo: PersonalInfoItem[] = [
     {
-      icon: <Mail className="text-pink-500 w-5 h-5" />,
+      icon: <Mail className="text-accent w-5 h-5" />,
       label: "Email",
       value: "Drprogrammer512@hotmail.com",
     },
     {
-      icon: <Phone className="text-pink-500 w-5 h-5" />,
+      icon: <Phone className="text-accent w-5 h-5" />,
       label: "Phone",
       value: "+201123633179",
     },
     {
-      icon: <MapPin className="text-pink-500 w-5 h-5" />,
+      icon: <MapPin className="text-accent w-5 h-5" />,
       label: "Location",
       value: "cario, bader city",
     },
@@ -40,7 +40,7 @@ const Info: React.FC = () => {
       className="p-4 rounded-xl shadow-inner bg-black/10"
     >
       <h3 className="text-2xl font-bold mb-4 text-white">
-        Personal <span className="text-pink-500">Details</span>
+        Personal <span className="text-accent">Details</span>
       </h3>
       <div className="grid grid-cols-1 gap-4">
         {personalInfo.map((item, index) => (

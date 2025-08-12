@@ -15,7 +15,7 @@ const Journey = () => {
 
   const journeyData: TimelineItem[] = [
     {
-      icon: <Briefcase className="text-pink-500 w-5 h-5" />,
+      icon: <Briefcase className="text-accent w-5 h-5" />,
       title: "Full Stack Developer",
       company: "Freelancer",
       date: "2024 - Present",
@@ -23,7 +23,7 @@ const Journey = () => {
         "Designed and developed responsive, user-friendly web applications using React.js and Node.js. Collaborated with a team to build scalable and robust solutions.",
     },
     {
-      icon: <Briefcase className="text-pink-500 w-5 h-5" />,
+      icon: <Briefcase className="text-accent w-5 h-5" />,
       title: "IT Support Specialist",
       company: "Tax Office , Khartoum, Sudan",
       date: "2022 - 2024",
@@ -31,7 +31,7 @@ const Journey = () => {
         "Provided technical support and system administration for a large corporate network. Maintained hardware and software, and resolved complex issues for clients.",
     },
     {
-      icon: <GraduationCap className="text-pink-500 w-5 h-5" />,
+      icon: <GraduationCap className="text-accent w-5 h-5" />,
       title: "Bachelor of  Computer Science",
       company: "University of sudan",
       date: "2015 - 2019",
@@ -50,7 +50,7 @@ const Journey = () => {
       className="p-6 rounded-xl shadow-inner bg-black/10"
     >
       <h3 className="text-2xl font-bold mb-8 text-white">
-        My <span className="text-pink-500">Journey</span>
+        My <span className="text-accent">Journey</span>
       </h3>
 
       <div className="relative border-l-2 border-gray-700 pl-10 space-y-10">
@@ -63,7 +63,7 @@ const Journey = () => {
 
             {/* Content */}
             <div className="space-y-1">
-              <p className="text-lg font-bold text-pink-500">{item.title}</p>
+              <p className="text-lg font-bold text-accent">{item.title}</p>
               <p className="text-base text-gray-300">{item.company}</p>
               <p className="text-sm font-light text-gray-500">{item.date}</p>
               <p className="text-base text-gray-400 mt-2">{item.description}</p>

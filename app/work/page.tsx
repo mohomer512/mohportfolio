@@ -50,7 +50,7 @@ const Work: React.FC = () => {
       className="p-4 rounded-xl shadow-inner bg-black/10"
     >
       <h2 className="text-3xl font-bold mb-8 text-white text-center">
-        My <span className="text-pink-500">Work</span>
+        My <span className="text-accent">Work</span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {workData.map((item, index) => (
@@ -70,7 +70,7 @@ const Work: React.FC = () => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-pink-500 font-semibold hover:underline"
+                className="inline-flex items-center gap-2 text-accent font-semibold hover:underline"
               >
                 View Project <ExternalLink size={16} />
               </a>

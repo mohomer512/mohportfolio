@@ -43,7 +43,7 @@ const About = () => {
                     <p className="text-lg font-semibold text-white">About me</p>
                   </div>
                   <h2 className="text-3xl font-bold">
-                    <span className="text-pink-500">Mohammed</span> Omer
+                    <span className="text-accent">Mohammed</span> Omer
                   </h2>
                   <p className="text-gray-300 text-base leading-relaxed">
                     Full Stack Developer with over 1 year of experience in

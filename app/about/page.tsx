@@ -28,7 +28,7 @@ const About = () => {
             className="w-full h-64 sm:h-80 md:h-[400px] xl:h-full bg-cover bg-center rounded-xl overflow-hidden"
             style={{
               backgroundImage:
-                "url('https://placehold.co/600x680/1a202c/fafafa?text=Mohammed+Omer')",
+                "url('https://scontent-hbe1-1.xx.fbcdn.net/v/t39.30808-6/488971722_10004520639611144_3051538740023573649_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHnqlX_p93ORxWXRD8whpzfzPSHPCyb9YjM9Ic8LJv1iHRZjLI3k31kXH4Km478mvCvdYhJorPzrk5MivEsW_nc&_nc_ohc=M3J4_XoE27UQ7kNvwFQ6215&_nc_oc=AdlvCqyzEHz38VduG4c00Y5Alkzkohd-lQvBnqPKgtSiObtDlFWeIrA5JXj4cFWTh4U&_nc_zt=23&_nc_ht=scontent-hbe1-1.xx&_nc_gid=v8d-QE3QHXbQO2J7CXU7HA&oh=00_AfXzTT_ZtIZiUKKZ_afTr_zvcGxf7N4-uPTskfIf_uDd1w&oe=68A05DD5')",
             }}
           ></div>
 

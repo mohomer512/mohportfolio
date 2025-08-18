@@ -10,6 +10,8 @@ import Skills from "@/components/Skills";
 import Stats from "@/components/Stats";
 import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
+import Image from "next/image"; // Import Next.js Image component
+import aboutImg from "@/public/assets/about.jpg"; // Import your local image
 
 const About = () => {
   return (
@@ -28,13 +30,18 @@ const About = () => {
       <div className="flex flex-col xl:grid xl:grid-cols-2 items-start gap-12 w-full">
 
         {/* صورة البروفايل */}
-        <div
-          className="w-full h-64 sm:h-80 md:h-[400px] xl:h-full bg-cover bg-center rounded-xl overflow-hidden flex"
-          style={{
-            backgroundImage:
-              "url('https://scontent-hbe1-1.xx.fbcdn.net/v/t39.30808-6/488971722_10004520639611144_3051538740023573649_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHnqlX_p93ORxWXRD8whpzfzPSHPCyb9YjM9Ic8LJv1iHRZjLI3k31kXH4Km478mvCvdYhJorPzrk5MivEsW_nc&_nc_ohc=M3J4_XoE27UQ7kNvwEHvvMV&_nc_oc=Adlr-DsgocrGmABkcPrh4Wlr8jK96rFjYqOfLTBHwHaw_xYiMgJSQBGPJldiuSmBdVM&_nc_zt=23&_nc_ht=scontent-hbe1-1.xx&_nc_gid=NrRszA_dQt9rsS2esP-_nw&oh=00_AfXRwlVJaEiqEWWJEqT6Q87uVWmlYia_nruxJchiq2YI_Q&oe=68A13ED5')",
-          }}
-        ></div>
+            <div className="w-full h-64 sm:h-80 md:h-[400px] xl:h-full rounded-xl overflow-hidden flex relative">
+
+        
+                   <Image 
+            src={aboutImg}
+            alt="Mohammed Omer's profile picture"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-xl"
+          />
+
+        </div>
 
         {/* المحتوى */}
         <div className="flex-1 w-full">

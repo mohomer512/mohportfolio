@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import MainNav from "@/components/MainNav";
-import Header from "@/components/Header";
 import { Menu, X } from 'lucide-react'; // Import icons for the toggle button
 
 export default function ClientLayout({
@@ -48,9 +47,7 @@ export default function ClientLayout({
 
       {/* Main content area */}
       <main className="flex-1 px-4 py-6 max-w-[1130px] mx-auto w-full">
-        <header className="mb-6">
-          <Header />
-        </header>
+   
         <section>{children}</section>
       </main>
     </div>

@@ -15,6 +15,8 @@ export default function ClientLayout({
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  
+
   return (
     <div className="flex min-h-screen">
       {/* Sidebar toggle button for all screen sizes */}

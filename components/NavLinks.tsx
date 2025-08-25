@@ -34,7 +34,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ containerStyles }) => {
           <li key={link.name}>
             <Link
               href={link.path}
-              className={`block capitalize ${isActive ? 'text-blue-400' : 'text-white'} hover:text-blue-300`}
+              className={`block capitalize ${isActive ? 'text-blue-400' : 'text-white'} hover:text-blue-300 -mt-0.5`}
             >
               {link.name}
             </Link>

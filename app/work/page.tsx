@@ -16,21 +16,21 @@ const Work: React.FC = () => {
   // Sample data for your work/portfolio projects.
   const workData: WorkItem[] = [
     {
-      image: "https://placehold.co/600x400/27272a/fafafa?text=Project+1",
-      title: "E-commerce Website",
-      description: "A full-stack e-commerce platform built with modern technologies. Features include user authentication, a shopping cart, and a secure checkout process.",
-      link: "#", // Replace with the actual project URL
+      image: "/assets/work/thumb1.png",
+      title: "Car Rental",
+      description: "A full-stack platform built with modern technologies.  and a secure checkout process.",
+      link: "https://car-rental-six-pi.vercel.app/", // Replace with the actual project URL
     },
     {
-      image: "https://placehold.co/600x400/27272a/fafafa?text=Project+2",
-      title: "Personal Blog",
-      description: "A modern blog application with a custom CMS, designed to be fast and SEO-friendly. Developed using Next.js for server-side rendering.",
-      link: "#", // Replace with the actual project URL
+      image: "/assets/work/thumb2.png",
+      title: "Rent ease ",
+      description: "A modern  application . Developed using Next.js for server-side rendering.",
+      link: "https://rent-ease-green.vercel.app/sign-in", // Replace with the actual project URL
     },
     {
-      image: "https://placehold.co/600x400/27272a/fafafa?text=Project+3",
-      title: "Social Media Dashboard",
-      description: "An interactive dashboard to visualize social media analytics. Developed with React, D3.js for data visualization, and Tailwind CSS for styling.",
+      image: "/assets/work/thumb3.png",
+      title: "Store app",
+      description: "A modern  application. Developed with React, Bootstrap for styling.",
       link: "#", // Replace with the actual project URL
     },
   ];

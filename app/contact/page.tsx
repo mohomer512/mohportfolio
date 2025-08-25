@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
     const data = await res.json();
 
     if (data.success) {
-      alert("✅ Your message has been saved in MongoDB!");
+      alert("✅ Your message has been saved !");
       setFormData({ name: "", email: "", subject: "", message: "" });
     } else {
       alert("❌ Something went wrong: " + data.message);

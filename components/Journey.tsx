@@ -20,7 +20,7 @@ const Journey = () => {
       company: "Freelancer",
       date: "2024 - Present",
       description:
-        "Designed and developed responsive, user-friendly web applications using React.js and Node.js. Collaborated with a team to build scalable and robust solutions.",
+        "Designed and developed responsive, user-friendly web applications using React.js and Node.js. Collaborated with a team to build scalable and robust solutions." ,
     },
     {
       icon: <Briefcase className="text-accent w-5 h-5" />,
@@ -66,7 +66,7 @@ const Journey = () => {
               <p className="text-lg font-bold text-accent">{item.title}</p>
               <p className="text-base text-gray-300">{item.company}</p>
               <p className="text-sm font-light text-gray-500">{item.date}</p>
-              <p className="text-base text-gray-400 mt-2">{item.description}</p>
+              <p className=" text-gray-400 mt-2 font-bold font-sans co text-xs">{item.description}</p>
             </div>
           </div>
         ))}

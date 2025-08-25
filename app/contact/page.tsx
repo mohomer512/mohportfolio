@@ -27,14 +27,29 @@ const Contact: React.FC = () => {
   };
 
   // Handle form submission.
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log('Form Submitted!', formData);
-    // You would typically send this data to a backend or a form service here.
-    // For now, it's just logging to the console.
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' }); // Clear the form
-  };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      alert("✅ Your message has been saved in MongoDB!");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } else {
+      alert("❌ Something went wrong: " + data.message);
+    }
+  } catch (error) {
+    alert("⚠️ Error sending message");
+    console.error(error);
+  }
+};
 
   return (
     <motion.section

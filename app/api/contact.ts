@@ -1,20 +1,33 @@
-import { NextResponse } from "next/server";
 import { MongoClient } from "mongodb";
+import { NextResponse } from "next/server";
 
-const uri = process.env.MONGODB_URI as string; // ضع الرابط هنا أو في env
-const client = new MongoClient(uri);
+type ContactPayload = {
+  name?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
+};
 
 export async function POST(req: Request) {
-  try {
-    const body = await req.json();
-    const { name, email, subject, message } = body;
+  const uri = process.env.MONGODB_URI;
 
-    // اتصال مع MongoDB
+  if (!uri) {
+    return NextResponse.json(
+      { success: false, message: "Contact storage is not configured." },
+      { status: 500 }
+    );
+  }
+
+  const body = (await req.json()) as ContactPayload;
+  const { name, email, subject, message } = body;
+  const client = new MongoClient(uri);
+
+  try {
     await client.connect();
-    const db = client.db("MyPro"); // غير الاسم حسب اختيارك
+
+    const db = client.db("MyPro");
     const collection = db.collection("contacts");
 
-    // إدخال البيانات
     await collection.insertOne({
       name,
       email,
@@ -23,10 +36,13 @@ export async function POST(req: Request) {
       createdAt: new Date(),
     });
 
-    return NextResponse.json({ success: true, message: "Message saved!" });
+    return NextResponse.json({ success: true, message: "Message saved." });
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ success: false, message: "Error saving message" }, { status: 500 });
+    return NextResponse.json(
+      { success: false, message: "Error saving message." },
+      { status: 500 }
+    );
   } finally {
     await client.close();
   }

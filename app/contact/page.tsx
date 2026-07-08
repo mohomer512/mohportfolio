@@ -66,7 +66,7 @@ const Contact: React.FC = () => {
     >
       <section className="section-shell">
         <span className="eyebrow mb-5">Contact</span>
-        <h1 className="h2 text-white">Let's discuss SharePoint, workflows, or internal systems.</h1>
+        <h1 className="h2 text-white">Let&apos;s discuss SharePoint, workflows, or internal systems.</h1>
         <p className="mt-5 text-slate-300">
           Reach out for SharePoint SE on-premises work, SPFx web parts, Plumsail customization,
           approval automation, or infrastructure troubleshooting.

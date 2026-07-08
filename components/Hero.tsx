@@ -84,7 +84,7 @@ const Hero = () => {
 
           <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row xl:items-start">
             <Link href="/contact" className="btn btn-lg btn-accent gap-3">
-              <span>Let's talk</span>
+              <span>Let&apos;s talk</span>
               <ArrowUpRight size={19} />
             </Link>
             <Link href="/about" className="btn btn-lg btn-tertiary gap-3">

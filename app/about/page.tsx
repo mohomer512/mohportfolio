@@ -67,7 +67,7 @@ const About = () => {
 
           <div className="mt-8">
             <Link href="/contact" className="btn btn-lg btn-accent inline-flex gap-3">
-              <span>Let's talk</span>
+              <span>Let&apos;s talk</span>
               <ArrowUpRight size={19} />
             </Link>
           </div>

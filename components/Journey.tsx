@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { BriefcaseBusiness, GraduationCap, ServerCog } from "lucide-react";
+import { BriefcaseBusiness, Code2, GraduationCap, ServerCog } from "lucide-react";
 
 interface TimelineItem {
   icon: React.ReactNode;
@@ -15,11 +15,19 @@ interface TimelineItem {
 const journeyData: TimelineItem[] = [
   {
     icon: <ServerCog className="h-5 w-5 text-accent" />,
-    title: "SharePoint & Workflow Developer",
-    organization: "Freelance / project work",
+    title: "SharePoint Developer",
+    organization: "ESafe Advanced Cybersecurity / BeSafe Technology",
+    date: "2025 - Present",
+    description:
+      "Working on SharePoint Server SE on-premises solutions, SPFx web parts, Plumsail Forms, CSOM, approval workflows, and document tracking for enterprise environments.",
+  },
+  {
+    icon: <Code2 className="h-5 w-5 text-accent" />,
+    title: "React & Next.js Developer",
+    organization: "Frontend and SharePoint interface development",
     date: "2024 - Present",
     description:
-      "Building SharePoint Server SE on-premises solutions with SPFx, Plumsail Forms, CSOM, approval workflows, and document tracking.",
+      "Coding with React and Next.js to build modern web interfaces, SharePoint dashboards, and internal business tools.",
   },
   {
     icon: <BriefcaseBusiness className="h-5 w-5 text-accent" />,
@@ -27,7 +35,7 @@ const journeyData: TimelineItem[] = [
     organization: "Tax Office, Khartoum, Sudan",
     date: "2022 - 2024",
     description:
-      "Supported users, hardware, CCTV, networking, UPS, firewall, server troubleshooting, and Windows-based infrastructure operations.",
+      "Worked with Active Directory, users, hardware, CCTV, networking, UPS, firewall, server troubleshooting, and Windows-based infrastructure operations.",
   },
   {
     icon: <GraduationCap className="h-5 w-5 text-accent" />,

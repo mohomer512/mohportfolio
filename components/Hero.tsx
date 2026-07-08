@@ -53,6 +53,8 @@ const Hero = () => {
                   1800,
                   "SPFx Web Parts",
                   1800,
+                  "React & Next.js Interfaces",
+                  1800,
                   "Workflow Automation",
                   1800,
                   "Document Approval Systems",

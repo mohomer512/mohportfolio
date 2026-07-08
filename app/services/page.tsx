@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Code2, FileCheck2, ListChecks, ServerCog, Workflow } from "lucide-react";
+import { Building2, Code2, FileCheck2, ListChecks, ServerCog, Workflow } from "lucide-react";
 
 interface ServiceItem {
   icon: React.ReactNode;
@@ -39,13 +39,19 @@ const servicesData: ServiceItem[] = [
     icon: <Code2 className="h-7 w-7" />,
     title: "Frontend Web Parts",
     description:
-      "React, TypeScript, JavaScript, HTML, and CSS interfaces for SharePoint web parts and internal business tools.",
+      "React, Next.js, TypeScript, JavaScript, HTML, and CSS interfaces for SharePoint web parts and internal business tools.",
+  },
+  {
+    icon: <Building2 className="h-7 w-7" />,
+    title: "Business Systems / ERP",
+    description:
+      "Odoo ERP knowledge for understanding business processes, automation needs, and integration basics around operational data.",
   },
   {
     icon: <ServerCog className="h-7 w-7" />,
     title: "Infrastructure Support",
     description:
-      "Windows Server, SQL Server, Active Directory, networking, CCTV, UPS, firewall, and server troubleshooting for on-premises environments.",
+      "Active Directory experience since 2022, plus Windows Server, SQL Server, networking, CCTV, UPS, firewall, and server troubleshooting.",
   },
 ];
 

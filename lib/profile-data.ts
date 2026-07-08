@@ -1,11 +1,12 @@
 export const profileSummary =
-  "SharePoint Developer specialized in SharePoint Server SE on-premises, SPFx, Plumsail Forms, CSOM, workflow automation, and document approval systems.";
+  "SharePoint Developer at ESafe Advanced Cybersecurity / BeSafe Technology since 2025, specialized in SharePoint Server SE on-premises, SPFx, Plumsail Forms, CSOM, workflow automation, document approval systems, and React/Next.js interfaces.";
 
 export const heroHighlights = [
   "SharePoint Server SE on-premises",
   "SPFx web parts",
+  "React & Next.js since 2024",
   "Document approval automation",
-  "Enterprise workflow support",
+  "Active Directory & on-prem infrastructure",
 ];
 
 export const skillGroups = [
@@ -36,13 +37,13 @@ export const skillGroups = [
   {
     title: "Frontend Development",
     summary:
-      "Modern interfaces for SharePoint dashboards, web parts, and internal tools.",
-    skills: ["React", "TypeScript", "JavaScript", "HTML", "CSS"],
+      "Modern interfaces for SharePoint dashboards, web parts, and internal tools, with React and Next.js experience since 2024.",
+    skills: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS"],
   },
   {
     title: "Server & Infrastructure",
     summary:
-      "Practical support for the Windows-based environments behind on-premises systems.",
+      "Practical support for the Windows-based environments behind on-premises systems, including Active Directory work since 2022.",
     skills: [
       "Active Directory",
       "Windows Server",
@@ -54,8 +55,8 @@ export const skillGroups = [
   {
     title: "Business Systems / ERP",
     summary:
-      "Automation and integration basics for business applications and operational data.",
-    skills: ["Odoo ERP automation and integration basics"],
+      "Automation and integration knowledge for business applications and operational data.",
+    skills: ["Odoo ERP knowledge", "Odoo ERP automation and integration basics"],
   },
 ];
 

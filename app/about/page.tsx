@@ -1,16 +1,15 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, MapPin } from "lucide-react";
+import AboutPhotoSlider from "@/components/AboutPhotoSlider";
 import Info from "@/components/Info";
 import Journey from "@/components/Journey";
 import Skills from "@/components/Skills";
 import Stats from "@/components/Stats";
 import WhatIBuild from "@/components/WhatIBuild";
-import aboutImg from "@/public/assets/about.jpg";
 import { profileSummary } from "@/lib/profile-data";
 
 const About = () => {
@@ -29,18 +28,7 @@ const About = () => {
       className="mx-auto mt-20 grid w-full gap-8 pb-16 xl:grid-cols-[0.86fr_1.14fr]"
     >
       <aside className="xl:sticky xl:top-8 xl:self-start">
-        <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.06] p-3 shadow-2xl shadow-slate-950/30">
-          <div className="relative h-[360px] overflow-hidden rounded-lg sm:h-[460px] xl:h-[620px]">
-            <Image
-              src={aboutImg}
-              alt="Mohammed Omer Ali"
-              fill
-              sizes="(min-width: 1280px) 420px, 100vw"
-              className="object-cover object-center"
-              priority
-            />
-          </div>
-        </div>
+        <AboutPhotoSlider />
       </aside>
 
       <div className="space-y-8">
@@ -51,8 +39,13 @@ const About = () => {
           </h1>
           <p className="mt-5 text-lg leading-8 text-slate-200">{profileSummary}</p>
           <p className="mt-4 leading-8 text-slate-300">
-            My work focuses on internal approval systems, SharePoint lists and libraries, document
-            tracking, permissions, and automation that can run reliably inside local infrastructure.
+            I have been coding with React and Next.js since 2024, and I use that frontend experience
+            to build clearer SharePoint web parts, dashboards, and internal business interfaces.
+          </p>
+          <p className="mt-4 leading-8 text-slate-300">
+            I worked with Active Directory and infrastructure operations at the Tax Office from 2022,
+            and I now work as a SharePoint Developer at ESafe Advanced Cybersecurity / BeSafe
+            Technology, a global IT infrastructure and cybersecurity company.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-300">

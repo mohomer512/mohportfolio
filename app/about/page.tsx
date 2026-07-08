@@ -1,89 +1,83 @@
 "use client";
 
-import { motion } from "framer-motion";
 import React from "react";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import Testimonial from "@/components/Testmonial";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import Info from "@/components/Info";
 import Journey from "@/components/Journey";
 import Skills from "@/components/Skills";
 import Stats from "@/components/Stats";
-import Link from "next/link";
-import { MdArrowOutward } from "react-icons/md";
-import Image from "next/image"; // Import Next.js Image component
-import aboutImg from "@/public/assets/about.jpg"; // Import your local image
+import WhatIBuild from "@/components/WhatIBuild";
+import aboutImg from "@/public/assets/about.jpg";
+import { profileSummary } from "@/lib/profile-data";
 
 const About = () => {
   return (
     <motion.section
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0, y: 16 }}
       animate={{
         opacity: 1,
+        y: 0,
         transition: {
-          delay: 0.3,
-          duration: 0.4,
-          ease: "easeInOut",
+          delay: 0.25,
+          duration: 0.45,
+          ease: "easeOut",
         },
       }}
-      className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16"
+      className="mx-auto mt-20 grid w-full gap-8 pb-16 xl:grid-cols-[0.86fr_1.14fr]"
     >
-      <div className="flex flex-col xl:grid xl:grid-cols-2 items-start gap-12 w-full">
-
-        {/* صورة البروفايل */}
-            <div className="w-full h-64 sm:h-80 md:h-[400px] xl:h-full rounded-xl overflow-hidden flex relative">
-
-        
-                   <Image 
-            src={aboutImg}
-            alt="Mohammed Omer's profile picture"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-xl"
-          />
-
+      <aside className="xl:sticky xl:top-8 xl:self-start">
+        <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.06] p-3 shadow-2xl shadow-slate-950/30">
+          <div className="relative h-[360px] overflow-hidden rounded-lg sm:h-[460px] xl:h-[620px]">
+            <Image
+              src={aboutImg}
+              alt="Mohammed Omer Ali"
+              fill
+              sizes="(min-width: 1280px) 420px, 100vw"
+              className="object-cover object-center"
+              priority
+            />
+          </div>
         </div>
+      </aside>
 
-        {/* المحتوى */}
-        <div className="flex-1 w-full">
-          <ScrollArea className="h-[calc(100vh-200px)] xl:h-[680px] w-full rounded-md border border-gray-800 p-6 sm:p-8 bg-black/10">
-            <div className="space-y-12 text-left">
-              {/* قسم التعريف */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-pink-500 rounded-full" />
-                  <p className="text-lg font-semibold text-white">About me</p>
-                </div>
-                <h2 className="text-3xl font-bold">
-                  <span className="text-accent">Mohammed</span> Omer
-                </h2>
-                <p className="text-gray-300 text-base leading-relaxed pr-2">
-                  Full Stack Developer with over 1 year of experience<br/> in
-                  building modern web applications using <br/> technologies such as
-                  React, Next.js, Node.js, Laravel, <br/>and IT Support Specialist with over 4 years of experience
-                </p>
-              </div>
+      <div className="space-y-8">
+        <section className="section-shell">
+          <span className="eyebrow mb-5">About me</span>
+          <h1 className="h2 text-white">
+            Mohammed Omer Ali, SharePoint Developer for enterprise on-premises systems.
+          </h1>
+          <p className="mt-5 text-lg leading-8 text-slate-200">{profileSummary}</p>
+          <p className="mt-4 leading-8 text-slate-300">
+            My work focuses on internal approval systems, SharePoint lists and libraries, document
+            tracking, permissions, and automation that can run reliably inside local infrastructure.
+          </p>
 
-              {/* باقي الأقسام */}
-              <div className="flex flex-col items-start gap-16">
-                <Stats />
-                <Testimonial />
-                <Info />
-                <Journey />
-                <Skills />
-              </div>
+          <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-300">
+            <span className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.06] px-3 py-2">
+              <MapPin size={16} className="text-accent" />
+              Cairo, Egypt
+            </span>
+            <span className="rounded-lg border border-white/10 bg-white/[0.06] px-3 py-2">
+              Sudanese developer
+            </span>
+          </div>
 
-              {/* زر الانتقال لصفحة الاتصال */}
-              <Link href="/contact">
-                <button className="btn btn-lg bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition-colors">
-                  <div className="flex items-center gap-3">
-                    <span>Lets talk.</span>
-                    <MdArrowOutward />
-                  </div>
-                </button>
-              </Link>
-            </div>
-          </ScrollArea>
-        </div>
+          <div className="mt-8">
+            <Link href="/contact" className="btn btn-lg btn-accent inline-flex gap-3">
+              <span>Let's talk</span>
+              <ArrowUpRight size={19} />
+            </Link>
+          </div>
+        </section>
+
+        <Stats />
+        <WhatIBuild />
+        <Info />
+        <Journey />
+        <Skills />
       </div>
     </motion.section>
   );

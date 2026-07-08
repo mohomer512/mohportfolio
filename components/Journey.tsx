@@ -2,76 +2,77 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { BriefcaseBusiness, GraduationCap, ServerCog } from "lucide-react";
+
+interface TimelineItem {
+  icon: React.ReactNode;
+  title: string;
+  organization: string;
+  date: string;
+  description: string;
+}
+
+const journeyData: TimelineItem[] = [
+  {
+    icon: <ServerCog className="h-5 w-5 text-accent" />,
+    title: "SharePoint & Workflow Developer",
+    organization: "Freelance / project work",
+    date: "2024 - Present",
+    description:
+      "Building SharePoint Server SE on-premises solutions with SPFx, Plumsail Forms, CSOM, approval workflows, and document tracking.",
+  },
+  {
+    icon: <BriefcaseBusiness className="h-5 w-5 text-accent" />,
+    title: "IT Support Specialist",
+    organization: "Tax Office, Khartoum, Sudan",
+    date: "2022 - 2024",
+    description:
+      "Supported users, hardware, CCTV, networking, UPS, firewall, server troubleshooting, and Windows-based infrastructure operations.",
+  },
+  {
+    icon: <GraduationCap className="h-5 w-5 text-accent" />,
+    title: "Bachelor of Computer Science",
+    organization: "University of Sudan",
+    date: "2013 - 2017",
+    description:
+      "Studied core software development, data structures, databases, networking, and systems concepts.",
+  },
+];
 
 const Journey = () => {
-  interface TimelineItem {
-    icon: React.ReactNode;
-    title: string;
-    company: string;
-    date: string;
-    description: string;
-  }
-
-  const journeyData: TimelineItem[] = [
-    {
-      icon: <Briefcase className="text-accent w-5 h-5" />,
-      title: "Full Stack Developer",
-      company: "Freelancer",
-      date: "2024 - Present",
-      description:
-        "Designed and developed responsive, user-friendly web applications using React.js and Node.js. Collaborated with a team to build scalable and robust solutions." ,
-    },
-    {
-      icon: <Briefcase className="text-accent w-5 h-5" />,
-      title: "IT Support Specialist",
-      company: "Tax Office , Khartoum, Sudan",
-      date: "2022 - 2024",
-      description:
-        "Provided technical support and system administration for a large corporate network. Maintained hardware and software, and resolved complex issues for clients.",
-    },
-    {
-      icon: <GraduationCap className="text-accent w-5 h-5" />,
-      title: "Bachelor of  Computer Science",
-      company: "University of sudan",
-      date: "2013 - 2017",
-      description:
-        "Completed coursework in data structures, algorithms, and software engineering. Graduated with honors.",
-    },
-  ];
-
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { delay: 0.3, duration: 0.5, ease: "easeInOut" },
-      }}
-      className="p-6 rounded-xl shadow-inner bg-black/10"
+    <motion.section
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.45, ease: "easeOut" }}
+      className="section-shell"
     >
-      <h3 className="text-2xl font-bold mb-8 text-white">
-        My <span className="text-accent">Journey</span>
-      </h3>
+      <div className="mb-8">
+        <span className="eyebrow mb-4">Journey</span>
+        <h2 className="h3 text-white">Experience and education</h2>
+      </div>
 
-      <div className="relative border-l-2 border-gray-700 pl-10 space-y-10">
-        {journeyData.map((item, index) => (
-          <div key={index} className="relative">
-            {/* Circle with icon */}
-            <div className=" flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 border-2 border-pink-500 shadow-lg">
+      <div className="relative space-y-6 before:absolute before:bottom-2 before:left-5 before:top-2 before:w-px before:bg-white/10">
+        {journeyData.map((item) => (
+          <article key={`${item.title}-${item.date}`} className="relative grid grid-cols-[42px_1fr] gap-4">
+            <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-lg border border-accent/30 bg-surface">
               {item.icon}
             </div>
-
-            {/* Content */}
-            <div className="space-y-1">
-              <p className="text-lg font-bold text-accent">{item.title}</p>
-              <p className="text-base text-gray-300">{item.company}</p>
-              <p className="text-sm font-light text-gray-500">{item.date}</p>
-              <p className=" text-gray-400 mt-2 font-bold font-sans co text-xs">{item.description}</p>
+            <div className="card-surface p-5">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="text-sm text-slate-300">{item.organization}</p>
+                </div>
+                <p className="text-sm font-semibold text-accent">{item.date}</p>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-slate-300">{item.description}</p>
             </div>
-          </div>
+          </article>
         ))}
       </div>
-    </motion.div>
+    </motion.section>
   );
 };
 

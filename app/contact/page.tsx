@@ -1,151 +1,156 @@
 "use client";
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
+
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+const inputStyles =
+  "w-full rounded-lg border border-white/10 bg-white/[0.07] p-4 text-white placeholder:text-slate-500 outline-none transition-colors focus:border-accent focus:bg-white/[0.1]";
 
 const Contact: React.FC = () => {
-  // Define a type for the form data.
-  interface FormData {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-  }
-
-  // State to manage the form input values.
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
-  // Handle changes to the form inputs.
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission.
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (data.success) {
-      alert("✅ Your message has been saved !");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } else {
-      alert("❌ Something went wrong: " + data.message);
+      if (data.success) {
+        alert("Your message has been saved.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        alert("Something went wrong: " + data.message);
+      }
+    } catch (error) {
+      alert("Error sending message.");
+      console.error(error);
     }
-  } catch (error) {
-    alert("⚠️ Error sending message");
-    console.error(error);
-  }
-};
+  };
 
   return (
     <motion.section
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0, y: 16 }}
       animate={{
         opacity: 1,
+        y: 0,
         transition: {
-          delay: 2.4,
-          duration: 0.4,
-          ease: "easeIn"
-        }
+          delay: 0.25,
+          duration: 0.45,
+          ease: "easeOut",
+        },
       }}
-      className="container mx-auto px-4 min-h-screen flex items-center"
+      className="mt-20 grid min-h-[calc(100vh-120px)] items-center gap-8 pb-16 lg:grid-cols-[0.9fr_1.1fr]"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-5xl mx-auto p-8 rounded-xl shadow-2xl bg-black/10">
-        {/* Left Side: Contact Information & Socials */}
-        <div className="flex flex-col justify-center space-y-8 p-4">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Contact <span className="text-accent ">Me</span>
-          </h2>
-          <p className="text-gray-300">
-            Feel free to reach out to me for collaborations, projects, or just to say hello. Im always open to new opportunities!
-          </p>
+      <section className="section-shell">
+        <span className="eyebrow mb-5">Contact</span>
+        <h1 className="h2 text-white">Let's discuss SharePoint, workflows, or internal systems.</h1>
+        <p className="mt-5 text-slate-300">
+          Reach out for SharePoint SE on-premises work, SPFx web parts, Plumsail customization,
+          approval automation, or infrastructure troubleshooting.
+        </p>
 
-          <div className="space-y-4">
-            <div className="flex items-center gap-4 text-white">
-              <Mail className="text-accent" />
-              <p>drprogrammer512@hotmail.com</p>
-            </div>
-            <div className="flex items-center gap-4 text-white">
-              <Phone className="text-accent" />
-              <p>+201123633179</p>
-            </div>
-            <div className="flex items-center gap-4 text-white">
-              <MapPin className="text-accent" />
-              <p>Egypt,Cario,Bader City </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-6 mt-4">
-            <a href="https://www.linkedin.com/in/mohammed-omer-759714294/" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="text-gray-400 hover:text-accent transition-colors" size={32} />
-            </a>
-            <a href="https://github.com/mohomer512" target="_blank" rel="noopener noreferrer">
-              <Github className="text-gray-400 hover:text-accent transition-colors" size={32} />
-            </a>
-            {/* Add more social media links here if you wish */}
+        <div className="mt-8 space-y-4">
+          <a href="mailto:drprogrammer512@hotmail.com" className="card-surface card-surface-hover flex items-center gap-4 p-4">
+            <Mail className="text-accent" />
+            <span className="break-all text-white">drprogrammer512@hotmail.com</span>
+          </a>
+          <a href="tel:+201123633179" className="card-surface card-surface-hover flex items-center gap-4 p-4">
+            <Phone className="text-accent" />
+            <span className="text-white">+20 1123633179</span>
+          </a>
+          <div className="card-surface flex items-center gap-4 p-4">
+            <MapPin className="text-accent" />
+            <span className="text-white">Egypt, Cairo, Badr City</span>
           </div>
         </div>
 
-        {/* Right Side: Contact Form */}
-        <div className="p-4">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full bg-white/5 border-b-2 border-gray-700 text-white p-4 rounded-lg focus:outline-none focus:border-accent transition-colors"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full bg-white/5 border-b-2 border-gray-700 text-white p-4 rounded-lg focus:outline-none focus:border-accent transition-colors"
-              />
-            </div>
+        <div className="mt-8 flex items-center gap-3">
+          <a
+            href="https://www.linkedin.com/in/mohammed-omer-759714294/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+            className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.07] text-slate-300 transition-all hover:border-accent/40 hover:bg-accent hover:text-primary"
+          >
+            <Linkedin size={22} />
+          </a>
+          <a
+            href="https://github.com/mohomer512"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+            className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.07] text-slate-300 transition-all hover:border-accent/40 hover:bg-accent hover:text-primary"
+          >
+            <Github size={22} />
+          </a>
+        </div>
+      </section>
+
+      <section className="section-shell">
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="grid gap-5 md:grid-cols-2">
             <input
               type="text"
-              name="subject"
-              placeholder="Subject"
-              value={formData.subject}
+              name="name"
+              placeholder="Your name"
+              value={formData.name}
               onChange={handleChange}
-              className="w-full bg-white/5 border-b-2 border-gray-700 text-white p-4 rounded-lg focus:outline-none focus:border-accent transition-colors"
+              className={inputStyles}
             />
-            <textarea
-              name="message"
-              rows={6}
-              placeholder="Your Message"
-              value={formData.message}
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              value={formData.email}
               onChange={handleChange}
-              className="w-full bg-white/5 border-b-2 border-gray-700 text-white p-4 rounded-lg focus:outline-none focus:border-accent transition-colors resize-none"
+              className={inputStyles}
             />
-            <button
-              type="submit"
-              className="w-full md:w-auto px-8 py-4 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition-colors"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
+          </div>
+          <input
+            type="text"
+            name="subject"
+            placeholder="Subject"
+            value={formData.subject}
+            onChange={handleChange}
+            className={inputStyles}
+          />
+          <textarea
+            name="message"
+            rows={7}
+            placeholder="Tell me about the SharePoint or workflow problem"
+            value={formData.message}
+            onChange={handleChange}
+            className={`${inputStyles} resize-none`}
+          />
+          <button type="submit" className="btn btn-lg btn-accent w-full gap-3 md:w-auto">
+            <span>Send message</span>
+            <Send size={18} />
+          </button>
+        </form>
+      </section>
     </motion.section>
   );
 };

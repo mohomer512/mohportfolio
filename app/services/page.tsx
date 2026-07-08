@@ -1,73 +1,87 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Code, Layout, GitBranch, Server } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Code2, FileCheck2, ListChecks, ServerCog, Workflow } from "lucide-react";
 
-// Define a type for a single service item.
 interface ServiceItem {
   icon: React.ReactNode;
   title: string;
   description: string;
 }
 
-const Services: React.FC = () => {
-  // Sample data for the services you provide.
-  const servicesData: ServiceItem[] = [
-    {
-      icon: <Code className="text-pink-500 w-12 h-12" />,
-      title: "Web Development",
-      description: "Building responsive and dynamic web applications from scratch using modern technologies like React, Next.js, and JavaScript.",
-    },
-    {
-      icon: <Layout className="text-pink-500 w-12 h-12" />,
-      title: "UI/UX Design",
-      description: "Creating intuitive and visually appealing user interfaces with a focus on user experience, accessibility, and modern design trends.",
-    },
-    {
-      icon: <Server className="text-pink-500 w-12 h-12" />,
-      title: "Backend Development",
-      description: "Developing robust and scalable server-side applications, APIs, and databases using technologies like Node.js, Express, and MongoDB.",
-    },
-    {
-      icon: <GitBranch className="text-pink-500 w-12 h-12" />,
-      title: "Version Control",
-      description: "Implementing professional workflows and best practices for collaborative development using Git and platforms like GitHub and GitLab.",
-    },
-  ];
+const servicesData: ServiceItem[] = [
+  {
+    icon: <ServerCog className="h-7 w-7" />,
+    title: "SharePoint SE Development",
+    description:
+      "On-premises SharePoint Server Subscription Edition customization, SPFx web parts, CSOM logic, REST API integration, and structured lists/libraries.",
+  },
+  {
+    icon: <Workflow className="h-7 w-7" />,
+    title: "Workflow & Forms Automation",
+    description:
+      "Approval workflow design, Plumsail Forms customization, SharePoint Designer / Workflow Manager concepts, and practical business process automation.",
+  },
+  {
+    icon: <FileCheck2 className="h-7 w-7" />,
+    title: "Document Approval Systems",
+    description:
+      "PDF and document approval flows with permissions, versioning, metadata, status visibility, and document tracking across internal teams.",
+  },
+  {
+    icon: <ListChecks className="h-7 w-7" />,
+    title: "SharePoint Dashboards",
+    description:
+      "Internal dashboards that summarize approvals, pending documents, department work, and SharePoint list data in a clear interface.",
+  },
+  {
+    icon: <Code2 className="h-7 w-7" />,
+    title: "Frontend Web Parts",
+    description:
+      "React, TypeScript, JavaScript, HTML, and CSS interfaces for SharePoint web parts and internal business tools.",
+  },
+  {
+    icon: <ServerCog className="h-7 w-7" />,
+    title: "Infrastructure Support",
+    description:
+      "Windows Server, SQL Server, Active Directory, networking, CCTV, UPS, firewall, and server troubleshooting for on-premises environments.",
+  },
+];
 
+const Services: React.FC = () => {
   return (
     <motion.section
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0, y: 16 }}
       animate={{
         opacity: 1,
+        y: 0,
         transition: {
-          delay: 2.4,
-          duration: 0.4,
-          ease: "easeIn"
-        }
+          delay: 0.25,
+          duration: 0.45,
+          ease: "easeOut",
+        },
       }}
-      className="p-4 rounded-xl shadow-inner bg-black/10"
+      className="mt-20 space-y-8 pb-16"
     >
-      <h2 className="text-3xl font-bold mb-8 text-white text-center">
-        My <span className="text-pink-500">Services</span>
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-        {servicesData.map((service, index) => (
-          <div 
-            key={index} 
-            className="flex flex-col items-start p-6 bg-white/5 rounded-lg transition-transform duration-300 hover:scale-105 hover:bg-white/10"
-          >
-            <div className="mb-4">
+      <section className="section-shell">
+        <span className="eyebrow mb-5">Services</span>
+        <h1 className="h2 max-w-3xl text-white">Practical systems for SharePoint and on-premises teams.</h1>
+        <p className="mt-5 max-w-3xl text-slate-300">
+          I focus on solutions that make internal work easier to approve, track, troubleshoot, and
+          maintain inside enterprise infrastructure.
+        </p>
+      </section>
+
+      <div className="grid gap-4 md:grid-cols-2">
+        {servicesData.map((service) => (
+          <article key={service.title} className="card-surface card-surface-hover p-6">
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
               {service.icon}
             </div>
-            <h4 className="text-xl font-bold text-white mb-2">
-              {service.title}
-            </h4>
-            <p className="text-sm font-light text-gray-300">
-              {service.description}
-            </p>
-          </div>
+            <h2 className="text-xl font-semibold text-white">{service.title}</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-300">{service.description}</p>
+          </article>
         ))}
       </div>
     </motion.section>

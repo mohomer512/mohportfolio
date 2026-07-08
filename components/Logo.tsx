@@ -2,12 +2,15 @@ import Link from "next/link";
 
 function Logo() {
   return (
-    
-    <Link href="" className="text-[28px] font-mono">
-      <span className="text-accent text-4xl">ــ</span>
-      MohDev<span className="text-accent text-4xl">ـ</span>
+    <Link href="/" className="inline-flex items-center gap-2 text-[24px] font-extrabold tracking-tight text-white">
+      <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-base font-black text-primary">
+        MO
+      </span>
+      <span>
+        Moh<span className="text-accent">Dev</span>
+      </span>
     </Link>
   );
 }
 
-export default Logo
+export default Logo;

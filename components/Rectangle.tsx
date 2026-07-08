@@ -31,7 +31,7 @@ const Rectangle = () => {
           duration: 1.8, // Increased duration for even slower animation (e.g., 1.8 seconds)
           ease: [0.63, 0, 0.17, 1],
         }}
-        className="fixed top-full w-screen h-screen z-10 bg-[#0a0815]"
+        className="fixed top-full w-screen h-screen z-10 bg-[#07111f]"
       />
 
       {/* Layer 2 - Middle Layer */}
@@ -45,7 +45,7 @@ const Rectangle = () => {
           duration: 1.8, // Increased duration for even slower animation
           ease: [0.63, 0, 0.17, 1],
         }}
-        className="fixed top-full w-screen h-screen z-20 bg-[#1b162b]"
+        className="fixed top-full w-screen h-screen z-20 bg-[#0b1b2e]"
       />
 
       {/* Layer 3 - Top Layer */}
@@ -59,7 +59,7 @@ const Rectangle = () => {
           duration: 1.8, // Increased duration for even slower animation
           ease: [0.63, 0, 0.17, 1],
         }}
-        className="fixed top-full w-screen h-screen z-30 bg-[#2d2545]"
+        className="fixed top-full w-screen h-screen z-30 bg-[#0ea5e9]"
       />
     </>
   );

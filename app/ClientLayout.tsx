@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import MainNav from "@/components/MainNav";
-import { Menu, X } from 'lucide-react'; // Import icons for the toggle button
+import { Menu, X } from 'lucide-react';
 
 export default function ClientLayout({
   children,
@@ -18,38 +18,33 @@ export default function ClientLayout({
   
 
   return (
-    <div className="flex min-h-screen">
-      {/* Sidebar toggle button for all screen sizes */}
-      <div className="absolute top-4 left-4 z-50">
+    <div className="relative flex min-h-screen">
+      <div className="fixed top-4 left-4 z-50">
         <button
           onClick={toggleSidebar}
-          className="p-2 text-white bg-pink-500 rounded-full shadow-lg hover:bg-pink-600 transition-colors"
+          className="rounded-lg border border-white/10 bg-accent p-3 text-primary shadow-lg shadow-sky-950/30 transition-all hover:-translate-y-0.5 hover:bg-accent-hover hover:text-white"
           aria-label="Toggle navigation"
         >
           {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
       
-      {/* Sidebar component */}
       <aside
-        className={`fixed top-0 left-0 w-[285px] h-full bg-secondary text-white shadow-2xl z-40
+        className={`fixed top-0 left-0 z-40 h-full w-[320px] bg-secondary/95 text-white shadow-2xl shadow-slate-950/40 backdrop-blur
           transform transition-transform duration-300 ease-in-out
           ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <MainNav />
       </aside>
       
-      {/* Overlay for all screen sizes when sidebar is open */}
       {isSidebarOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-30"
+          className="fixed inset-0 z-30 bg-slate-950/70 backdrop-blur-sm"
           onClick={toggleSidebar}
         />
       )}
 
-      {/* Main content area */}
-      <main className="flex-1 px-4 py-6 max-w-[1130px] mx-auto w-full">
-   
+      <main className="relative z-10 mx-auto w-full max-w-[1180px] flex-1 px-4 py-6 sm:px-6">
         <section>{children}</section>
       </main>
     </div>

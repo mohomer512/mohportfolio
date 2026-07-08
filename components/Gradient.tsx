@@ -1,10 +1,9 @@
-import React from 'react'
+import React from "react";
 
 const Gradient = () => {
   return (
-    <div className='hidden md:block w-[480px] h-[480px] rounded-full bg-accent/70 absolute -top-[30%] -right-[4%] z-30 blur-[300px]' />
+    <div className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(135deg,rgba(56,189,248,0.08)_0%,rgba(14,165,233,0.05)_38%,rgba(2,6,23,0)_72%)]" />
   );
-
-
 };
-  export default Gradient
+
+export default Gradient;

@@ -1,60 +1,29 @@
 "use client";
 
-import React from 'react';
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+import React from "react";
+import { CheckCircle2 } from "lucide-react";
 
-const TestimonialSlider = () => {
-  const testimonials = [
-    {
-      text: "This product has completely transformed my workflow. !",
-      name: "client",
-    },
-    {
-      text: "Working with this team was an amazing experience. They were professional, .",
-      name: "client",
-    },
-    {
-      text: "I was initially skeptical, but this service proved to be  exactly what I needed.!",
-      name: "client",
-    },
-  ];
+const priorities = [
+  "Clear approval stages and document ownership",
+  "Reliable on-premises automation for internal teams",
+  "Readable dashboards and maintainable SharePoint structures",
+];
 
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    arrows: false,
-  };
-
+const Testimonial = () => {
   return (
-    <div className="w-full max-w-lg mx-auto p-4 md:p-6 text-white">
-      <h3 className="text-3xl font-bold text-left text-accent mb-6">
-        What My Clients Say
-      </h3>
-      <Slider {...sliderSettings}>
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="px-4 py-6">
-            <div className="flex flex-col items-start text-left space-y-4 pr-6">
-              {/* النص الرئيسي */}
-              <p className="text-left font-light text-gray-300 leading-relaxed italic">
-                {testimonial.text}
-              </p>
-              {/* اسم الكاتب */}
-              <p className="text-sm font-bold text-blue-500">
-                - {testimonial.name}
-              </p>
-            </div>
+    <section className="section-shell">
+      <span className="eyebrow mb-4">Work priorities</span>
+      <h2 className="h3 text-white">Built around clarity, tracking, and maintainability.</h2>
+      <div className="mt-6 grid gap-3">
+        {priorities.map((item) => (
+          <div key={item} className="card-surface flex items-center gap-3 p-4">
+            <CheckCircle2 className="h-5 w-5 text-accent" />
+            <p className="text-sm text-slate-300">{item}</p>
           </div>
         ))}
-      </Slider>
-    </div>
+      </div>
+    </section>
   );
 };
 
-export default TestimonialSlider;
+export default Testimonial;

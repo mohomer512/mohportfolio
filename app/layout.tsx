@@ -17,8 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mohmmed Omer Portfolio",
-  description: "Modern & JS Mastery Portfolio",
+  title: "Mohammed Omer Ali | SharePoint Developer",
+  description:
+    "SharePoint Developer specialized in SharePoint Server SE on-premises, SPFx, Plumsail Forms, CSOM, workflow automation, and document approval systems.",
 };
 
 export default function RootLayout({
